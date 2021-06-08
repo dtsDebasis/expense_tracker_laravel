@@ -76,5 +76,5 @@
 @endsection
 
 @push('scripts')
-
+<script src="{{asset('js/home.js')}}"></script>
 @endpush

@@ -108,5 +108,5 @@
 @endsection
 
 @push('scripts')
-
+<script src="{{asset('js/expense.js')}}"></script>
 @endpush

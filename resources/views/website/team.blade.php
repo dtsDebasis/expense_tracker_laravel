@@ -82,5 +82,5 @@
 @endsection
 
 @push('scripts')
-
+<script src="{{asset('js/team.js')}}"></script>
 @endpush
