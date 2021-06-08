@@ -25,8 +25,9 @@ Route::group(['prefix' => 'v1/', 'middleware' => ['api']], function () {
 	Route::post('member_update', 'App\Http\Controllers\Api\MemberApiController@member_update')->name('member_update_api');
 
     //Expense Page API
+    Route::get('get_all_expenses', 'App\Http\Controllers\Api\ExpenseApiController@get_all_expenses')->name('get_all_expenses_api');
     Route::post('add_expense', 'App\Http\Controllers\Api\ExpenseApiController@add_expense')->name('add_expense_api');
-    Route::put('update_expense', 'App\Http\Controllers\Api\ExpenseApiController@update_expense')->name('update_expense_api');
+    Route::post('update_expense', 'App\Http\Controllers\Api\ExpenseApiController@update_expense')->name('update_expense_api');
 
     //Home Page API
     Route::get('get_all_member_splits', 'App\Http\Controllers\Api\ExpenseApiController@get_all_member_splits')->name('get_all_member_splits_api');

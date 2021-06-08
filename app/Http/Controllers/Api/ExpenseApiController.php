@@ -121,6 +121,25 @@ class ExpenseApiController extends Controller
     }
 
     /*
+      Route : http://127.0.0.1:8000/api/v1/get_all_member_splits
+      Details : Get Member Wise Split Details
+      Author : Debasis Chaktaborty
+      Last Modified By : Debasis Chaktaborty
+      Created On : 8th June,2021
+      Last Work : 8th June,2021
+    */
+    public function get_all_expenses(Request $request)
+    {
+        try {
+            $expenses = Expense::with(['member'])->orderBy('id','desc')->get();
+
+            return Helper::rj('Expenses', 200, $expenses);
+        } catch (Exception $e) {
+			return Helper::rj($e->getMessage(), 500);
+		}
+    }
+
+    /*
       Route : http://127.0.0.1:8000/api/v1/get_summary
       Details : Get Day wise Summery for Home Page
       Author : Debasis Chaktaborty
