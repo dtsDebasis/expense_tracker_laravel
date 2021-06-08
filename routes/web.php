@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\WebController@home')->name('home');
+Route::get('/teams', 'App\Http\Controllers\WebController@teams')->name('teams');
+Route::get('/expenses', 'App\Http\Controllers\WebController@expenses')->name('expenses');
+
