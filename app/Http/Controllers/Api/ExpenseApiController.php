@@ -149,8 +149,8 @@ class ExpenseApiController extends Controller
             $data['total_spent'] = $total_spent;
             $data['total_no_transaction'] = $total_no_transaction;
             $data['total_no_member'] = $total_no_member;
-            $data['highest_expense_by'] = $getHighestExpenseMember->member ? $getHighestExpenseMember->member->full_name : null;
-            $data['highest_expense_amount'] = $getHighestExpenseMember->member ? $getHighestExpenseMember->total_expense : null;
+            $data['highest_expense_by'] = $getHighestExpenseMember ? $getHighestExpenseMember->member->full_name : null;
+            $data['highest_expense_amount'] = $getHighestExpenseMember ? $getHighestExpenseMember->total_expense : null;
             return Helper::rj('Summary', 200, $data);
         } catch (Exception $e) {
 			return Helper::rj($e->getMessage(), 500);

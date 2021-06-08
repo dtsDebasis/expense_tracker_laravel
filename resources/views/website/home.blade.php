@@ -3,10 +3,8 @@
 @section('content')
 
 <div class="jumbotron jumbotron-fluid">
-    <div class="container" style="text-align: center">
-        <h1 class="display-4">Rs.4,500 spent in 42 transactions</h1>
-        <p class="lead" style="max-width: 650px; margin: 1.5em auto 0">3 team mates have spend Rs.4,500 in the last
-            31 days with 42 transactions. Team mate with most spending is Amit Sharma with Rs.1,250 spent.</p>
+    <div class="container summary_section" style="text-align: center">
+
     </div>
 </div>
 <div class="container">

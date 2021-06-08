@@ -20,15 +20,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'v1/', 'middleware' => ['api']], function () {
 	//Member Page API
-    Route::get('member_list', 'App\Http\Controllers\Api\MemberApiController@member_list');
-	Route::post('member_add', 'App\Http\Controllers\Api\MemberApiController@member_add');
-	Route::post('member_update', 'App\Http\Controllers\Api\MemberApiController@member_update');
+    Route::get('member_list', 'App\Http\Controllers\Api\MemberApiController@member_list')->name('member_list_api');
+	Route::post('member_add', 'App\Http\Controllers\Api\MemberApiController@member_add')->name('member_add_api');
+	Route::post('member_update', 'App\Http\Controllers\Api\MemberApiController@member_update')->name('member_update_api');
 
     //Expense Page API
-    Route::post('add_expense', 'App\Http\Controllers\Api\ExpenseApiController@add_expense');
-    Route::put('update_expense', 'App\Http\Controllers\Api\ExpenseApiController@update_expense');
+    Route::post('add_expense', 'App\Http\Controllers\Api\ExpenseApiController@add_expense')->name('add_expense_api');
+    Route::put('update_expense', 'App\Http\Controllers\Api\ExpenseApiController@update_expense')->name('update_expense_api');
 
     //Home Page API
-    Route::get('get_all_member_splits', 'App\Http\Controllers\Api\ExpenseApiController@get_all_member_splits');
-    Route::get('get_summary/{summary_of?}', 'App\Http\Controllers\Api\ExpenseApiController@get_summary');
+    Route::get('get_all_member_splits', 'App\Http\Controllers\Api\ExpenseApiController@get_all_member_splits')->name('get_all_member_splits_api');
+    Route::get('get_summary/{summary_of?}', 'App\Http\Controllers\Api\ExpenseApiController@get_summary')->name('get_summary_api');
 });
