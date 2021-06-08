@@ -46,28 +46,16 @@
     </div>
 </div>
 <div class="container" style="margin: 2em auto">
-    <div class="row">
-        <div class="col-lg-12" style="margin: 1em 0;">
-            <h2>Amit Sharma</h2>
-            <ul class="list-group">
-                <li class="list-group-item bg-success text-white">Raman Mishra will pay Amit Rs.150</li>
-                <li class="list-group-item bg-success text-white">Kunal Tiwari will pay Amit Rs.250</li>
-            </ul>
-        </div>
-        <div class="col-lg-12" style="margin: 1em 0;">
+    <div class="row transaction">
+
+        {{-- <div class="col-lg-12" style="margin: 1em 0;">
             <h2>Raman Mishra</h2>
             <ul class="list-group">
                 <li class="list-group-item bg-danger text-white">Amit Sharma will receive Rs.150 from Raman</li>
                 <li class="list-group-item bg-success text-white">Kunal Tiwari will pay Raman Rs.180</li>
             </ul>
-        </div>
-        <div class="col-lg-12" style="margin: 1em 0;">
-            <h2>Kunal Tiwari</h2>
-            <ul class="list-group">
-                <li class="list-group-item bg-danger text-white">Raman Mishra will receive Rs.180 from Kunal</li>
-                <li class="list-group-item bg-danger text-white">Amit Mishra will receive Rs.250 from Kunal</li>
-            </ul>
-        </div>
+        </div> --}}
+
     </div>
 </div>
 

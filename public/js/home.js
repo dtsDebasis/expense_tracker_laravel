@@ -23,4 +23,46 @@ $( document ).ready(function() {
             console.log(response);
         }
     });
+
+    $.ajax({
+        url: '/api/v1/get_all_member_splits',
+        cache: false,
+        type: 'GET',
+        dataType: 'JSON',
+        success: function(data){
+            var response = null;
+            var summary_section = $('.transaction');
+            if (data.status == 200) {
+                response = data.data;
+                var inner_html = null;
+                if (response.length > 0) {
+                    console.log(response);
+                    response.forEach(member => {
+                        inner_html = '<div class="col-lg-12" style="margin: 1em 0;">';
+                        inner_html = inner_html+'<h2>'+member.first_name+' '+member.last_name+'</h2>';
+                        inner_html = inner_html+'<ul class="list-group">';
+
+                        member.splits.forEach(split => {
+                           if (split.type == 'give') {
+                            inner_html = inner_html+'<li class="list-group-item bg-danger text-white">'+split.display_text+'</li>';
+
+                           } else {
+                            inner_html = inner_html+'<li class="list-group-item bg-success text-white">'+split.display_text+'</li>';
+
+                           }
+                        });
+
+                        inner_html = inner_html+'</ul>';
+                        inner_html = inner_html+'</div>';
+                        summary_section.append(inner_html);
+                    });
+
+                } else {
+                    //inner_html = `<h1 class="display-4">Cobold's Expense Monitor</h1>`;
+                }
+
+            }
+            //console.log(response);
+        }
+    });
 });
