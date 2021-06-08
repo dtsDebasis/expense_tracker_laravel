@@ -49,26 +49,37 @@ $(document).ready(function () {
             cache: false,
             type: 'GET',
             dataType: 'JSON',
-            success: function(data){
+            success: function (data) {
                 var response = null;
                 var summary_section = $('.team-list');
                 if (data.status == 200) {
                     response = data.data;
-
+                    //console.log(response);
                     summary_section.html("");
-                    response.forEach(team => {
-                       //console.log(team);
-                       var inner_html = null;
-                       inner_html = '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">';
-                       inner_html = inner_html+'<div class="d-flex w-100 justify-content-between">';
-                       inner_html = inner_html+'<h5 class="mb-1">'+team.full_name+'</h5>';
-                       inner_html = inner_html+'<small>last expense: 0 days ago</small>';
-                       inner_html = inner_html+'</div>';
-                       inner_html = inner_html+'<small>'+team.first_name+' has to pay Rs. '+team.total_amount_to_give+'</small><br>';
-                       inner_html = inner_html+'<small>'+team.first_name+' should receive Rs. '+team.total_amount_to_receive+'</small>';
-                       inner_html = inner_html+'</a>';
-                       summary_section.append(inner_html);
-                    });
+                    if (response.length > 0) {
+
+                        response.forEach(team => {
+                            //console.log(team);
+                            var inner_html = null;
+                            inner_html = '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">';
+                            inner_html = inner_html + '<div class="d-flex w-100 justify-content-between">';
+                            inner_html = inner_html + '<h5 class="mb-1">' + team.full_name + '</h5>';
+                            inner_html = inner_html + '<small>last expense: 0 days ago</small>';
+                            inner_html = inner_html + '</div>';
+                            inner_html = inner_html + '<small>' + team.first_name + ' has to pay Rs. ' + team.total_amount_to_give + '</small><br>';
+                            inner_html = inner_html + '<small>' + team.first_name + ' should receive Rs. ' + team.total_amount_to_receive + '</small>';
+                            inner_html = inner_html + '</a>';
+                            summary_section.append(inner_html);
+                        });
+                    } else {
+                        var inner_html = null;
+                        inner_html = '<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">';
+                        inner_html = inner_html + '<div class="d-flex w-100 justify-content-between">';
+                        inner_html = inner_html + '<h5 class="mb-1">Please Add Your First Teammate</h5>';
+                        inner_html = inner_html + '</div>';
+                        inner_html = inner_html + '</a>';
+                        summary_section.append(inner_html);
+                    }
                 }
                 //console.log(response);
             }
