@@ -22,7 +22,7 @@ class MemberApiController extends Controller
     public function member_list(Request $request)
     {
         try {
-           $members = Member::get()->makeHidden(['splits']);
+           $members = Member::orderBy('id','desc')->get()->makeHidden(['splits']);
            return Helper::rj('members', 200, $members);
         } catch (Exception $e) {
 			return Helper::rj($e->getMessage(), 500);

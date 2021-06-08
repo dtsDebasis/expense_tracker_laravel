@@ -7,7 +7,7 @@
         <h1>Team</h1>
       </div>
       <div class="col-lg-6" style="text-align: right">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#team" aria-expanded="false"
+        <button class="btn btn-primary add_btn" type="button" data-toggle="collapse" data-target="#team" aria-expanded="false"
           aria-controls="collapseExample">
           Add Teammate
         </button>
@@ -15,24 +15,29 @@
     </div>
     <div class="collapse" id="team" style="margin-top: 1em">
       <div class="card card-body">
-        <form>
+      <div class="alert alert-danger error-msg" role="alert">
+         This email is already taken or you entered some wrong data
+       </div>
+        <form id="team_mate" name="team_mate_form" method="POST" action="">
+          <input type="hidden" class="form-control" name="id" id="edit_id">
+
           <div class="row">
             <div class="col-lg-3">
               <div class="form-group">
-                <label for="exampleInputEmail1">First Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" aria-describedby="emailHelp" required>
               </div>
             </div>
             <div class="col-lg-3">
               <div class="form-group">
-                <label for="exampleInputPassword1">Last Name</label>
-                <input type="text" class="form-control" id="exampleInputPassword1">
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" name="last_name" id="last_name" required>
               </div>
             </div>
             <div class="col-lg-3">
               <div class="form-group">
-                <label for="exampleInputPassword1">Email</label>
-                <input type="email" class="form-control" id="exampleInputPassword1">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="email" required>
               </div>
             </div>
             <div class="col-lg-3">
@@ -50,30 +55,16 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="list-group team-list">
+
+          {{-- <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">Amit Sharma</h5>
               <small>last expense: 3 days ago</small>
             </div>
-            <small>Amit should receive Rs.400</small>
-          </a>
-
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Kunal Tiwari</h5>
-              <small>last expense: 6 days ago</small>
-            </div>
             <small>Kunal has to pay Rs.250</small>
-          </a>
-
-          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Raman Mishra</h5>
-              <small>last expense: 6 days ago</small>
-            </div>
-            <small>Raman has to pay Rs.150</small>
-          </a>
+            <small>Amit should receive Rs.400</small>
+          </a> --}}
 
         </div>
       </div>
